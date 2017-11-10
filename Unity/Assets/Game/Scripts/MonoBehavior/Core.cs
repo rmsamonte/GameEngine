@@ -4,6 +4,7 @@ using System.Collections;
 using Game.Scripts.UI.Screens;
 using Game.Scripts.UI;
 using Game.Scripts.Helpers;
+using Game.Scripts.Audio;
 
 namespace Game.Scripts.MonoBehavior
 {
@@ -55,6 +56,10 @@ namespace Game.Scripts.MonoBehavior
 
                 var playerPrefHelper = new PlayerPrefHelper();
                 Service.Set<PlayerPrefHelper>(playerPrefHelper);
+
+                var audioManager = new AudioManager();
+                audioManager.Initialize();
+                Service.Set<AudioManager>(audioManager);
 
                 var blackScreen = new BlackScreen();
                 screenManager.AddScreen(blackScreen);

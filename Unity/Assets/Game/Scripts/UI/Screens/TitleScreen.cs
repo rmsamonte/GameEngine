@@ -6,6 +6,7 @@ using System;
 using System.Timers;
 using Game.Scripts.Helpers;
 using Game.Scripts.UI.Widgets;
+using Game.Scripts.Audio;
 
 namespace Game.Scripts.UI.Screens
 {
@@ -111,7 +112,13 @@ namespace Game.Scripts.UI.Screens
             if (transitioning)
             {
                 return;
-            }            
+            }
+
+            var audioManager = Service.Get<AudioManager>();
+            if(audioManager != null)
+            {
+                audioManager.PlaySound("GENERIC_BUTTON_PRESSED");
+            }
 
             var playerPrefHelper = PlayerPrefHelper.Instance;
             var playerData = PlayerData.Instance;
