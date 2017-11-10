@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <row Hand="ROYAL_FLUSH" Bet1="250" Bet2="500" Bet3="750" Bet4="1000" Bet5="4000" ></row>
+  <row Hand="STRAIGHT_FLUSH" Bet1="50" Bet2="100" Bet3="150" Bet4="200" Bet5="250" ></row>
+  <row Hand="FOUR_OF_A_KIND" Bet1="20" Bet2="50" Bet3="75" Bet4="100" Bet5="125" ></row>
+  <row Hand="FULL_HOUSE" Bet1="9" Bet2="18" Bet3="27" Bet4="36" Bet5="45" ></row>
+  <row Hand="FLUSH" Bet1="6" Bet2="12" Bet3="18" Bet4="24" Bet5="30" ></row>
+  <row Hand="STRAIGHT" Bet1="4" Bet2="8" Bet3="12" Bet4="16" Bet5="20" ></row>
+  <row Hand="THREE_OF_A_KIND" Bet1="3" Bet2="6" Bet3="9" Bet4="12" Bet5="15" ></row>
+  <row Hand="TWO_PAIR" Bet1="2" Bet2="4" Bet3="6" Bet4="8" Bet5="10" ></row>
+  <row Hand="JACKS_OR_BETTER" Bet1="1" Bet2="2" Bet3="3" Bet4="4" Bet5="5" ></row>
+</rows>

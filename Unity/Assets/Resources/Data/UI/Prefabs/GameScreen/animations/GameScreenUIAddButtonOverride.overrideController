@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: GameScreenUIAddButtonOverride
+  m_Controller: {fileID: 9100000, guid: 7a3b5e573e1cc4e4587b8c85225253cf, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 88dd6463ecc477140a7bdc513643702b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2d31c76ee67ea3648928641559286d78, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5cb964f89803f4b43a29ff95ada3ee9a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1d012a4b97bfe894991ebe661de914ae, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 768179c52d2319f45be76e9a5ef444de, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 98d681117a626a248b9d3c4a6e48a21c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1a929958db6172247a27ebbcd057e068, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e53c3181f88085e478afdac7b9d9f61b, type: 2}
