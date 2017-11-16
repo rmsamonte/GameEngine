@@ -9,7 +9,6 @@ namespace Game.Scripts
         private string token = "";
         private string playerId = "";
         private Guid secret;
-        private int credits = Constants.Game.STARTING_GAME_CREDITS;
 
         private static PlayerData instance;
 
@@ -37,20 +36,10 @@ namespace Game.Scripts
         {
             var playerPrefHelper = PlayerPrefHelper.Instance;
 
-            if (playerPrefHelper == null )
+            if (playerPrefHelper == null)
             {
                 Debug.LogError("PlayerData::Initialize - Unable to get PlayerPrefHelper instance.  NULL returned.");
                 return;
-            }
-
-            if (playerPrefHelper.HasKey( Constants.Game.PLAYER_CREDITS ))
-            {
-                credits = playerPrefHelper.GetInt( Constants.Game.PLAYER_CREDITS );
-            }
-            else
-            {
-                credits = Constants.Game.STARTING_GAME_CREDITS;
-                playerPrefHelper.SetInt( Constants.Game.PLAYER_CREDITS, credits );
             }
         }
 
@@ -59,20 +48,5 @@ namespace Game.Scripts
         public string PlayerId { get; set; }
 
         public Guid Secret { get; set; }
-
-        public int Credits { 
-            get 
-            {
-                var playerPrefHelper = PlayerPrefHelper.Instance;
-
-                if (playerPrefHelper == null)
-                {
-                    Debug.LogError("PlayerData::Credits Property - Unable to get PlayerPrefHelper instance.  NULL returned.");
-                    return 0;
-                }
-
-                return playerPrefHelper.GetInt(Constants.Game.PLAYER_CREDITS); 
-            } 
-            set { credits = value; } }
     }
 }

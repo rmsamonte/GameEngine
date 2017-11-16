@@ -72,7 +72,7 @@ namespace Game.Scripts.UI.Screens
                 soundIcon = new ToggleButton(soundButton);
                 soundIcon.Toggle(playerPrefHelper.GetSoundFXPreference());
 
-                soundIcon.Intialize(OnSoundIconPressed, "HOLD_BUTTON");
+                soundIcon.Intialize(OnSoundIconPressed, Constants.GameSounds.UI_GENERIC_BUTTON_PRESSED);
             }
 
             var debugTextObj = GetElement(UI_DEBUG_TEXT);
@@ -117,7 +117,7 @@ namespace Game.Scripts.UI.Screens
             var audioManager = Service.Get<AudioManager>();
             if(audioManager != null)
             {
-                audioManager.PlaySound("GENERIC_BUTTON_PRESSED");
+                audioManager.PlaySound(Constants.GameSounds.UI_GENERIC_BUTTON_PRESSED);
             }
 
             var playerPrefHelper = PlayerPrefHelper.Instance;

@@ -1,4 +1,9 @@
-﻿namespace Game.Scripts.UI.Screens
+﻿using Game.Scripts.Backend.Services;
+using Game.Scripts.MonoBehavior;
+using Game.Scripts.Backend.Model;
+using System.Collections.Generic;
+
+namespace Game.Scripts.UI.Screens
 {
     public class GameScreen : BaseScreen
     {
@@ -26,7 +31,7 @@
             var screenManager = Service.Get<ScreenManager>();
             if (screenManager != null)
             {
-                screenManager.FadeOut(null);
+                screenManager.FadeOut(TestUserProfiles);
             }
         }
 
@@ -44,7 +49,20 @@
 
         private void InitializeButtons()
         {            
-        }        
+        }   
+        
+        private void TestUserProfiles()
+        {
+            UserDataService userDataService = new UserDataService();
+
+            var core = Service.Get<Core>();
+            if(core != null)
+            {
+                core.GameStartCoroutine(userDataService.GetData(() => 
+                {
+                }));
+            }
+        }
     }
 }
 

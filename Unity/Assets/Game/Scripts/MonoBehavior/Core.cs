@@ -5,6 +5,7 @@ using Game.Scripts.UI.Screens;
 using Game.Scripts.UI;
 using Game.Scripts.Helpers;
 using Game.Scripts.Audio;
+using Game.Scripts.Backend.Model;
 
 namespace Game.Scripts.MonoBehavior
 {
@@ -39,7 +40,22 @@ namespace Game.Scripts.MonoBehavior
             if(Initialize())
             {
                 LoadTitleScreen();
-            }            
+            }
+
+            //UserData userData = new UserData();
+            //userData.username = "GibFather";
+            //userData.fname = "Rey";
+            //userData.lname = "Samonte";
+            //userData.email = "rmsamonte@gmail.com";
+            //String json = JsonUtility.ToJson(userData, true);
+            //if(!String.IsNullOrEmpty(json))
+            //{
+            //    UserData data = JsonUtility.FromJson<UserData>(json);
+            //    if(data != null)
+            //    {
+
+            //    }
+            //}
         }
 
         void Awake()
