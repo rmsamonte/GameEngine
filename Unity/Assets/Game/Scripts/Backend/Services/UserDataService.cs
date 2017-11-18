@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Game.Scripts.Backend.Services
 {
-    public class UserDataService
+    public class UserDataService : IService
     {
         private string GET_URL = Constants.Server.BASE_URL + "users.php";
 
@@ -15,7 +15,17 @@ namespace Game.Scripts.Backend.Services
 
         }
 
-        public IEnumerator GetData(Action callback)
+        public IEnumerator PostData(System.Object obj)
+        {
+            if(obj != null)
+            {
+                var userData = obj as UserData;
+            }            
+
+            yield return null;
+        }
+
+        public IEnumerator GetData(Action<string> callback)
         {
             List<UserData> userList = new List<UserData>();
 
@@ -26,14 +36,9 @@ namespace Game.Scripts.Backend.Services
                 yield return www;
             }
 
-            if(string.IsNullOrEmpty(www.error))
-            {
-                //TODO: Parse www.text...
-            }
-
             if(callback != null)
             {
-                callback();
+                callback(www.text);
             }
         }
     }

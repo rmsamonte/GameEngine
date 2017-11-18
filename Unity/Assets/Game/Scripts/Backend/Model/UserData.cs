@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-using System;
+﻿using System;
 
 namespace Game.Scripts.Backend.Model
 {

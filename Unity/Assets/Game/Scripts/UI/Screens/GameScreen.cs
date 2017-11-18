@@ -2,6 +2,7 @@
 using Game.Scripts.MonoBehavior;
 using Game.Scripts.Backend.Model;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Game.Scripts.UI.Screens
 {
@@ -58,8 +59,16 @@ namespace Game.Scripts.UI.Screens
             var core = Service.Get<Core>();
             if(core != null)
             {
-                core.GameStartCoroutine(userDataService.GetData(() => 
+                core.GameStartCoroutine(userDataService.GetData((string data) => 
                 {
+                    if(!string.IsNullOrEmpty(data))
+                    {
+                        UserData[] userData = JsonHelper.ArrayFromJson<UserData>(data);
+                        if(userData != null && userData.Length > 0)
+                        {
+
+                        }
+                    }
                 }));
             }
         }
