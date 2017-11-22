@@ -30,6 +30,8 @@ namespace Game.Scripts.UI
             BlackScreen = UnityUtils.FindChildByName(Layers.gameObject, Constants.Layers.BLACKSCREEN).GetComponent<RectTransform>();
 
             screens = new Dictionary<string, BaseScreen>();
+
+            UnityEngine.Object.DontDestroyOnLoad(this.uiSystem);
         }
 
         public void AddScreen(BaseScreen screen)

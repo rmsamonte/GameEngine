@@ -5,13 +5,15 @@ using Game.Scripts.UI.Screens;
 using Game.Scripts.UI;
 using Game.Scripts.Helpers;
 using Game.Scripts.Audio;
-using Game.Scripts.Backend.Model;
+using Game.Scripts.TouchInput;
+using Game.Scripts.Level;
 
 namespace Game.Scripts.MonoBehavior
 {
     public class Core : MonoBehaviour
     {
         public GameObject uiSystem;
+        public GameObject editorCamera;
 
         [HideInInspector]
         public static Core Instance;
@@ -24,6 +26,9 @@ namespace Game.Scripts.MonoBehavior
         // Use this for initialization
         void Start()
         {
+            DontDestroyOnLoad(this);
+            editorCamera.SetActive(false);
+
             Service.Set<Core>(this);
 
             if (Instance == null)
@@ -67,6 +72,11 @@ namespace Game.Scripts.MonoBehavior
         {
             if(uiSystem != null)
             {
+                var cameraHandler = new CameraHandler();
+                Service.Set<CameraHandler>(cameraHandler);
+
+                Service.Set<LevelManager>(new LevelManager());
+
                 var screenManager = new ScreenManager(uiSystem);
                 Service.Set<ScreenManager>(screenManager);
 
