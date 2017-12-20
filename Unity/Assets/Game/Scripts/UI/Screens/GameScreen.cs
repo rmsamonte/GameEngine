@@ -1,8 +1,7 @@
 ﻿using Game.Scripts.Backend.Services;
 using Game.Scripts.MonoBehavior;
 using Game.Scripts.Backend.Model;
-using System.Collections.Generic;
-using UnityEngine;
+using Game.Scripts.Level;
 
 namespace Game.Scripts.UI.Screens
 {
@@ -28,6 +27,8 @@ namespace Game.Scripts.UI.Screens
         public override void OnLoaded()
         {
             base.OnLoaded();
+
+            LoadTestLevel();
 
             var screenManager = Service.Get<ScreenManager>();
             if (screenManager != null)
@@ -70,6 +71,15 @@ namespace Game.Scripts.UI.Screens
                         }
                     }
                 }));
+            }
+        }
+
+        private void LoadTestLevel()
+        {
+            var levelManager = Service.Get<LevelManager>();
+            if(levelManager != null)
+            {
+                levelManager.AddTerrain(new TestPlane());
             }
         }
     }

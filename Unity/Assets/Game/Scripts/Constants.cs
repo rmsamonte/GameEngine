@@ -15,6 +15,12 @@ namespace Game.Scripts
             public const string BLACKSCREEN = "Blackscreen";
         }
 
+        public class EnvironmentLayers
+        {
+            public const string TERRAIN = "TerrainContainer";
+            public const string OBJECTS = "ObjectsContainer";
+        }
+
         public class ScreenManager
         {
             public const float FADE_IN_TIME = 1.0f;

@@ -29,7 +29,7 @@ namespace Game.Scripts.Level
             }
         }
 
-        public void AddTerrain(GameObject terrain, Vector3 position = new Vector3(), Quaternion rot = new Quaternion())
+        public void AddTerrain(Environment terrain, Vector3 position = new Vector3(), Quaternion rot = new Quaternion())
         {
             if(terrain != null && terrainContainer != null)
             {
@@ -69,6 +69,12 @@ namespace Game.Scripts.Level
                     Object.Destroy(child);
                 }
             }
+        }
+
+        public void CleanLevel()
+        {
+            DestroyAllGameObjects();
+            DestroyAllTerrain();
         }
     }
 }
